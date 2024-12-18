@@ -9,7 +9,7 @@ handler.all = async function (m) {
         let users = Object.entries(global.db.data.users).map(([key, value]) => {
                 return { ...value, jid: key }
         })
-        let pp = './src/avatar_contact.png'
+        let pp = 'https://pomf2.lain.la/f/29uif8pa.jpg'
         let name = await conn.getName(m.sender)
         let who = m.sender
         let exp = global.db.data.users[m.sender].exp
@@ -21,7 +21,7 @@ handler.all = async function (m) {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
         let username = conn.getName(who)
         try {
-                pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
+                pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://pomf2.lain.la/f/29uif8pa.jpg')
         } catch (e) {
         } finally {
                 if (!user.autolevelup) return !0
