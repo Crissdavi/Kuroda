@@ -31,7 +31,7 @@ handler.all = async function (m) {
                         user.role = global.db.data.users[m.sender].role
                         {
                                 let tag = `@${m.sender.replace(/@.+/, '')}`
-                                conn.sendFile(m.chat, logo, 'Thumb.jpg', `◪ *Name:* ${name}\n├◆ *Role:* ${user.role}\n├◆ *Exp:* ${exp} xp\n╰◆ *Level:* ${before} ➠ ${user.level}\n`.trim(), m)
+                                conn.sendFile(m.chat, pp, 'Thumb.jpg', `◪ *Name:* ${name}\n├◆ *Role:* ${user.role}\n├◆ *Exp:* ${exp} xp\n╰◆ *Level:* ${before} ➠ ${user.level}\n`.trim(), m)
                         }
                 }
         }
