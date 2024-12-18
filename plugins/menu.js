@@ -1,6 +1,3 @@
-// Script Ori By BochilGaming
-// Ditulis Ulang Oleh ImYanXiao
-
 import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
@@ -235,162 +232,11 @@ let tags = {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    
-    //----------------- FAKE
- let fvn = {quoted: { key: {participant : '0@s.whatsapp.net'},message: { "audioMessage": {"mimetype":"audio/ogg; codecs=opus","seconds": "2022","ptt": "true"} } }}
- let floc = {quoted: { key: { participant : '0@s.whatsapp.net'}, message: { "liveLocationMessage": { "caption": `Menu`,"h": `${name}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')}} }}
- let fdocs = {quoted: { key : { participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `Hai Kak ${name}!`,  jpegThumbnail: fs.readFileSync('./thumbnail.jpg') }}}}
- let fgclink = {quoted: {key: {participant : '0@s.whatsapp.net'},message: {groupInviteMessage: {groupJid: "17608914335-1625305606@g.us",inviteCode: null,groupName: `Hai ${name}!`,  caption: wm,  jpegThumbnail: fs.readFileSync('./thumbnail.jpg') }} }}
- let fgif = {quoted: {key: { participant : '0@s.whatsapp.net'}, message: {  "videoMessage": {  "title": `Hai Kak ${name}!`, "h": `Hmm`, 'seconds': '999999999',  'gifPlayback': 'true',  'caption': wm, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg') } } } }
- let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
- 
-    let ftoko = {
-    key: {
-    fromMe: false,
-    participant: `${m.sender.split`@`[0]}` + '@s.whatsapp.net',
-    remoteJid: 'status@broadcast',
-  },
-  message: {
-  "productMessage": {
-  "product": {
-  "productImage":{
-  "mimetype": "image/jpeg",
-  "jpegThumbnail": fs.readFileSync('./thumbnail.jpg'),
-    },
-  "title": `${ucapan()}`,
-  "description": '𝗧 𝗜 𝗠 𝗘 : ' + wktuwib,
-  "currencyCode": "US",
-  "priceAmount1000": "100",
-  "retailerId": wm,
-  "productImageCount": 999
-        },
-  "businessOwnerJid": `${m.sender.split`@`[0]}@s.whatsapp.net`
-  }
-  }
-  }
-  
-    let urls = pickRandom(['https://telegra.ph/file/035e524939ab0294ba91f.jpg', 'https://telegra.ph/file/96b2275d3b14d071290bc.jpg', 'https://telegra.ph/file/2c6b7660bc6126404a9bb.jpg', 'https://telegra.ph/file/c635bf577bb9d59a3e00b.jpg', 'https://telegra.ph/file/be8dd52f6363f9e9f5a60.jpg', 'https://telegra.ph/file/02e53361b9dc946f63c8d.jpg', 'https://telegra.ph/file/298ed2f1bba17aeb64ca8.jpg', 'https://telegra.ph/file/be2a18221974147f66ea0.jpg'])
-    const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
-    
-    //FAKE TROLI
-
-    const ftrol = {
-    key : {
-    remoteJid: 'status@broadcast',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 2022,
-    status: 1,
-    surface : 1,
-    message: `Hai Kak ${name}!`, 
-    orderTitle: `▮Menu ▸`,
-    thumbnail: await (await fetch(flaaa + 'Menu')).buffer(), //Gambarnye
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-    
-    const fload = {
-    key : {
-    remoteJid: 'status@broadcast',
-    participant : '0@s.whatsapp.net'
-    },
-    message: {
-    orderMessage: {
-    itemCount : 2022,
-    status: 1,
-    surface : 1,
-    message: '[❗] Memuat Menu ' + '...\n Sabar Ya Kak ^ω^', 
-    orderTitle: `▮Menu ▸`,
-    thumbnail: await (await fetch(flaaa + 'Loading')).buffer(), //Gambarnye
-    sellerJid: '0@s.whatsapp.net' 
-    }
-    }
-    }
-    await conn.reply(m.chat, '*Tunggu Sebentar Kak. . .*', m)
-    
-    //------------------< MENU >----------------
-    
-    //------------------ SIMPLE
-    /*conn.reply(m.chat, text, fkon, { contextInfo: { mentionedJid: [m.sender],
-        externalAdReply: {
-            title: `${htjava} ${namebot}`,
-            body: titlebot,
-            description: titlebot,
-            mediaType: 2,
-          thumbnail: await(await fetch(thumb2)).buffer(),
-         mediaUrl: sig
-        }
-     }
-    })*/
-    
-    //------------------ DOCUMENT
-    let d1 = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
-    let d2 = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-    let d3  = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-    let d4 = 'application/pdf'
-    let d5 = 'application/vnd.android.package-archive'
-    let d6 = 'application/zip'
-    let td = `${pickRandom([d1,d2,d3,d4,d5,d6])}`
-    
-   //~~~Source : https://github.com/Rlxfly
-    //------- MENU LOCATION
-    /*const pre = generateWAMessageFromContent(m.chat, { liveLocationMessage:{
-  degreesLatitude: 34.672314,
-  degreesLongitude: 135.484802,
-  accuracyInMeters: 100,
-  speedInMps: 999,
-  degreesClockwiseFromMagneticNorth: 99,
-  caption: text.trim(),
-  sequenceNumber: 774236889,
-  timeOffset: 8600,
-  jpegThumbnail: await(await fetch(thumb)).buffer(),
-  contextInfo: { mentionedJid: [m.sender] }
-}}, { quoted: m
-					})
-
-return conn.relayMessage(m.chat, pre.message, { messageId: pre.key.id })*/
-
-    //------------------- Payment MENU
-    /*await conn.relayMessage(m.chat,  {
-    requestPaymentMessage: {
-      currencyCodeIso4217: 'USD',
-      amount1000: 50000000,
-      requestFrom: m.sender,
-      noteMessage: {
-      extendedTextMessage: {
-      text: text.trim(),
-      contextInfo: {
-      externalAdReply: {
-      showAdAttribution: true
-      }}}}}}, {})*/
       
 
-    //------------------ DOCUMENT WITH EXTERNALADS WITHOUT BUTTON
-     return conn.sendMessage(m.chat, {
-            document: { url: sgh},
-            fileName: global.namedoc, 
-            mimetype: global.doc, 
-            fileLength: fsizedoc,
-            pageCount: fpagedoc, 
-            caption: text.trim(), 
-            contextInfo: {
-              mentionedJid:[m.sender], 
-              forwardingScore: '9999999',
-              externalAdReply: {
-                mediaType: 1,
-                previewType:"pdf", 
-                renderLargerThumbnail: true,
-                showAdAttribution: true,
-                sourceUrl: global.social, 
-                thumbnail:fs.readFileSync('./thumbnail.jpg'),
-                title:'ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ ᴛᴏᴅᴀʏ?', 
-              },
-            },
-          }, { quoted: m })
-    
+        let img = 'https://pomf2.lain.la/f/5o7q0pqg.jpg'
+    await m.react('🤍')
+    await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, fake)    
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -431,19 +277,19 @@ function clockStringP(ms) {
   return [ye, ' *Years 🗓️*\n',  mo, ' *Month 🌙*\n', d, ' *Days ☀️*\n', h, ' *Hours 🕐*\n', m, ' *Minute ⏰*\n', s, ' *Second ⏱️*'].map(v => v.toString().padStart(2, 0)).join('')
 }
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Kok Belum Tidur Kak? 🥱"
-  if (time >= 4) {
-    res = "Pagi Lord 🌄"
-  }
-  if (time >= 10) {
-    res = "Siang Lord ☀️"
-  }
-  if (time >= 15) {
-    res = "Sore Lord 🌇"
-  }
-  if (time >= 18) {
-    res = "Malam Lord 🌙"
-  }
-  return res
+    const time = moment.tz('America/Buenos_Aires').format('HH')
+    let res = "Buenas Noches🌙"
+    if (time >= 5) {
+        res = "Buena Madrugada🌄"
+    }
+    if (time > 10) {
+        res = "Buenos días☀️"
+    }
+    if (time >= 12) {
+        res = "Buenas Tardes🌅"
+    }
+    if (time >= 19) {
+        res = "Buenas Noches🌙"
+    }
+    return res
 }
