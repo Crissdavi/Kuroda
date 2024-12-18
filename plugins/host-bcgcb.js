@@ -6,9 +6,9 @@ conn.reply(m.chat, `_Mengirim pesan broadcast ke ${groups.length} grup_`, m)
  let member = (await conn.groupMetadata(id)).participants.map(v => v.jid)
 conn.sendFile(id, thumbbc, 'Thumb.jpg', '────━┅ *BROADCAST* ┅━────\n' + text, m, { contextInfo: {
         externalAdReply: { showAdAttribution: true,
-            title: `${htjava} BROADCAST`,
-            body: titlebot,
-            description: wm2,
+            title: `${packname} BROADCAST`,
+            body: title,
+            description: wm,
             mediaType: 2,
           thumbnail: await getBuffer(thumbbc),
          mediaUrl: sig
