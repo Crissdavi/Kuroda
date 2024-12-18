@@ -14,10 +14,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(__dirname);
 const { name, author } = require(join(__dirname, './package.json'));
 
-say('Lightweight\nWhatsApp Bot', { font: 'chrome', align: 'center', gradient: ['red', 'magenta'] });
-say(`'${name}' By @${author.name || author}`, { font: 'console', align: 'center', gradient: ['red', 'magenta'] });
-
-console.log('🐾 Starting...'); 
+say('Genesis\nUltra', { font: 'chrome', align: 'center', gradient: ['red', 'magenta'] });
+say(`'${name}' By @Angelito-OFC\nTeam Starcore`, { font: 'console', align: 'center', gradient: ['red', 'magenta'] });
 
 var isRunning = false;
 
