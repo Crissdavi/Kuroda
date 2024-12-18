@@ -1,75 +1,54 @@
-import ffmpeg from "fluent-ffmpeg";
+//creditos a kenisawa Dev
+//modificaciones Angel-OFC
+import { ttdl } from 'ruhend-scraper';
 
-var handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) {
-    throw `*[❗] Example: ${usedPrefix + command} <URL>`;
-  }
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+ if (!args || !args[0]) return conn.reply(m.chat, '*\`Ingresa El link Del vídeo a descargar 🤍\`*', m, fake, )
+ if (!args[0].match(/tiktok/gi)) return conn.reply(m.chat, `Verifica que el link sea de TikTok`, m, fake).then(_ => m.react('✖️'))
+    try {
+await m.react('🕓');
+        let {
+            title,
+            author,
+            username,
+            published,
+            like,
+            comment,
+            share,
+            views,
+            bookmark,
+            video,
+            cover,
+            duration,
+            music,
+            profilePicture
+        } = await ttdl(args[0]);//variables del resultado de 'ttdl'
+       
+let txt = '';
+txt += `*\`[ TIKTOK DOWNLOAD ]\`*\n\n`;
+txt += `> 🤍 *\`» Título :\`* ${title || '❌'}\n`;
+txt += `> 🤍 *\`» Autor :\`* ${author || '❌'}\n`;
+txt += `> 🤍 *\`» Duracion :\`* ${duration || '❌'}\n`;
+txt += `> 🤍 *\`» Visitas :\`* ${views || '❌'}\n`;
+txt += `> 🤍 *\`» Likes :\`* ${like || '❌'}\n`; 
+txt += `> 🤍 *\`» Comentarios :\`* ${comment || '❌'}\n`;
+txt += `> 🤍 *\`» Share :\`* ${share || '❌'}\n`;
+txt += `> 🤍 *\`» Publicado :\`* ${published || '❌'}\n\n`;
 
-  try {
-    await conn.reply(m.chat, "Tunggu sebentar kak, sedang dalam proses...", m);
-
-    const tiktokData = await tiktokdl(args[0]);
-
-    if (!tiktokData) {
-      throw "Gagal mendownload video!";
+//VIDEO TIKTOK
+        await conn.sendFile(m.chat, video, 'tiktok.mp4', txt, m, null, rcanal);
+//AUDIO TIKTOK
+        await conn.sendMessage(m.chat, { audio: { url: music }, mimetype: "audio/mp4", fileName: title + '.mp3' }, { quoted: m })
+        await m.react('✅');
+    } catch (e) {//salir si hay un error
+        await m.react('✖️');
+        console.log(e)
     }
-
-    const videoURL = tiktokData.data.play;
-    const videoURLWatermark = tiktokData.data.wmplay;
-    const images = tiktokData.data.images; 
-    const audioURL = tiktokData.data.music;
-
-    const infonya_gan = `Judul: ${tiktokData.data.title}\nUpload: ${tiktokData.data.create_time}\n\nSTATUS:\n=====================\nLike = ${tiktokData.data.digg_count}\nKomen = ${tiktokData.data.comment_count}\nShare = ${tiktokData.data.share_count}\nViews = ${tiktokData.data.play_count}\nSimpan = ${tiktokData.data.download_count}\n=====================\n\nUploader: ${tiktokData.data.author.nickname || "Tidak ada informasi penulis"}\n(${tiktokData.data.author.unique_id} - https://www.tiktok.com/@${tiktokData.data.author.unique_id} )\nSound: ${tiktokData.data.music}\n`;
-
-    if (images && images.length > 0) {
-      for (let image of images) {
-        await conn.sendFile(m.chat, image, "image.jpg", `Ini kak gambarnya\n\n${infonya_gan}`, m);
-      }
-
-      if (audioURL) {
-        await conn.sendFile(m.chat, audioURL, "lagutt.mp3", "Ini lagunya", m);
-      }
-
-    } else if (videoURL || videoURLWatermark) { 
-      await conn.sendFile(m.chat, videoURL, "tiktok.mp4", `Ini kak videonya\n\n${infonya_gan}`, m);
-      
-      if (videoURLWatermark) {
-        await conn.sendFile(m.chat, videoURLWatermark, "tiktokwm.mp4", `*Ini Versi Watermark*\n\n${infonya_gan}`, m);
-      }
-
-      const audioFileName = "lagutt.mp3";
-      await convertVideoToMp3(videoURL, audioFileName);
-      await conn.sendFile(m.chat, audioFileName, "lagutt.mp3", "Ini lagunya", m);
-      
-    } else {
-      throw "Tidak ada tautan slide/video yang tersedia.";
-    }
-
-    conn.reply(m.chat, "Enjoy With The Content", m);
-
-  } catch (e) {
-    conn.reply(m.chat, `Error: ${e}`, m);
-  }
 };
 
-async function convertVideoToMp3(videoUrl, outputFileName) {
-  return new Promise((resolve, reject) => {
-    ffmpeg(videoUrl)
-      .toFormat("mp3")
-      .on("end", () => resolve())
-      .on("error", (err) => reject(err))
-      .save(outputFileName);
-  });
-}
-
-handler.help = ["tiktok"].map((v) => v + " <url>");
-handler.tags = ["downloader"];
-handler.command = /^t(t|iktok(d(own(load(er)?)?|l))?|td(own(load(er)?)?|l))$/i;
+handler.help = ['tiktok *<link>*']
+handler.corazones = 3
+handler.tags = ['dl']
+handler.command = /^(tiktok)$/i;
 
 export default handler;
-
-async function tiktokdl(url) {
-  let tikwm = `https://www.tikwm.com/api/?url=${url}?hd=1`;
-  let response = await (await fetch(tikwm)).json();
-  return response;
-}
