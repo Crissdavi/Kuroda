@@ -24,7 +24,7 @@ conn.reply(m.chat, caption, m, { contextInfo: {
     mediaUrl: canal,
     mediaType: 2,
     title: wm,
-    body: botdate,
+    body: packname,
     thumbnail: await(await fetch(link)).buffer(),
     sourceUrl: link
      }}
