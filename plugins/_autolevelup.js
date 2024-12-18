@@ -9,7 +9,7 @@ handler.all = async function (m) {
         let users = Object.entries(global.db.data.users).map(([key, value]) => {
                 return { ...value, jid: key }
         })
-        let pp = 'https://pomf2.lain.la/f/29uif8pa.jpg'
+        let pp3 = 'https://pomf2.lain.la/f/29uif8pa.jpg'
         let name = await conn.getName(m.sender)
         let who = m.sender
         let exp = global.db.data.users[m.sender].exp
@@ -31,7 +31,7 @@ handler.all = async function (m) {
                         user.role = global.db.data.users[m.sender].role
                         {
                                 let tag = `@${m.sender.replace(/@.+/, '')}`
-                                conn.sendFile(m.chat, pp, 'Thumb.jpg', `◪ *Name:* ${name}\n├◆ *Role:* ${user.role}\n├◆ *Exp:* ${exp} xp\n╰◆ *Level:* ${before} ➠ ${user.level}\n`.trim(), m)
+                                conn.sendFile(m.chat, pp3, 'Thumb.jpg', `◪ *Name:* ${name}\n├◆ *Role:* ${user.role}\n├◆ *Exp:* ${exp} xp\n╰◆ *Level:* ${before} ➠ ${user.level}\n`.trim(), m)
                         }
                 }
         }
