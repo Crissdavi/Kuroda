@@ -1,4 +1,4 @@
-import { canLevelUp, xpRange } from '../lib/levelling.js'
+import { canLevelUp, xpRange } from './lib/levelling.js'
 import fetch from 'node-fetch'
 import fs from 'fs'
 import { RankCardBuilder } from 'discord-card-canvas'
