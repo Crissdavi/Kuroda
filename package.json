@@ -44,6 +44,7 @@
         "@StarlightsTeam/Scraper": "github:StarlightsTeam/StarlightsTeam-Scraper",
         "@ibaraki-douji/pixivts": "^2.4.1",
         "@vitalets/google-translate-api": "^9.2.0",
+        "acrcloud": "^1.4.0",
         "awesome-phonenumber": "^5.10.0",
         "aptoide-scraper": "github:DIEGO-OFC/dv-aptoide-scraper",
         "neastooapi": "^1.0.2",
