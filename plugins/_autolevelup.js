@@ -1,4 +1,4 @@
-import { xpRange, canLevelUp } from '../lib/levelling.js';
+/* import { xpRange, canLevelUp } from '../lib/levelling.js';
 import fetch from 'node-fetch';
 
 let handler = m => m;
