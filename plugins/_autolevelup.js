@@ -1,8 +1,24 @@
-import { canLevelUp } from '../lib/levelling.js';
+import { xpRange, canLevelUp } from '../lib/levelling.js'; // Se mantiene la importación original
 import fetch from 'node-fetch';
 
-// Establecemos una experiencia fija por nivel
+// Establecemos la cantidad de XP adicional por nivel
 const xpPerLevel = 200;
+
+// Modificamos la función xpRange para que devuelva la lógica acumulativa de XP
+export function xpRange(level) {
+    const xpRequired = level * xpPerLevel;  // XP total necesario para alcanzar el nivel actual
+    return {
+        min: xpRequired - xpPerLevel, // XP mínimo necesario para el nivel
+        xp: xpRequired,               // XP necesario para alcanzar el nivel
+        max: (level + 1) * xpPerLevel // XP necesario para el siguiente nivel
+    };
+}
+
+// Modificamos canLevelUp para usar la nueva lógica de experiencia
+export function canLevelUp(level, exp, multiplier = 1) {
+    const { max } = xpRange(level); // Verifica si la experiencia del usuario supera el XP necesario para el siguiente nivel
+    return exp >= max;
+}
 
 let handler = m => m;
 
@@ -34,7 +50,7 @@ handler.all = async function (m) {
         user.level++; // Incrementar nivel
 
         // Notificar cada nivel ganado de forma individual
-        let { min, xp, max } = xpRange(user.level); // Cambiado para usar xpPerLevel
+        let { min, xp, max } = xpRange(user.level); // Obtener el rango de XP para el nivel
         await new Promise(resolve => setTimeout(resolve, 2000)); // Pausa de 2 segundos entre niveles
         conn.sendFile(
             m.chat,
@@ -52,6 +68,9 @@ handler.all = async function (m) {
 };
 
 export default handler;
+
+
+
 
 
 /* import { xpRange, canLevelUp } from '../lib/levelling.js';
