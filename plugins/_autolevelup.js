@@ -1,4 +1,4 @@
-import { xpRange, canLevelUp, findLevel } from './lib/levelling.js'
+import { xpRange, canLevelUp, findLevel } from '../lib/levelling.js'
 import fetch from 'node-fetch'
 
 let handler = m => m
@@ -9,8 +9,7 @@ handler.all = async function (m) {
         let users = Object.entries(global.db.data.users).map(([key, value]) => {
                 return { ...value, jid: key }
         })
-        let pp = 'https://pomf2.lain.la/f/29uif8pa.jpg'
-        let name = await conn.getName(m.sender)
+        let pp = './src/avatar_contact.png'
         let who = m.sender
         let exp = global.db.data.users[m.sender].exp
         let logo = await (await fetch(thumblvlup.getRandom())).buffer()
@@ -18,7 +17,7 @@ handler.all = async function (m) {
         let discriminator = who.substring(9, 13)
         let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
         let usersLevel = sortedLevel.map(enumGetKey)
-        let { min, xp: max - min, max } = xpRange(user.level, global.multiplier)
+        let { min, xp, max } = xpRange(user.level, global.multiplier)
         let username = conn.getName(who)
         try {
                 pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
@@ -31,7 +30,7 @@ handler.all = async function (m) {
                         user.role = global.db.data.users[m.sender].role
                         {
                                 let tag = `@${m.sender.replace(/@.+/, '')}`
-                                conn.sendFile(m.chat, logo, 'Thumb.jpg', `◪ *Name:* ${name}\n├◆ *Role:* ${user.role}\n├◆ *Exp:* ${exp} xp\n╰◆ *Leveli:* ${before} ➠ ${user.level}\n`.trim(), m)
+                                conn.sendFile(m.chat, logo, 'Thumb.jpg', `◪ *Name:* ${tag}\n├◆ *Role:* ${user.role}\n├◆ *Exp:* ${exp} xp\n╰◆ *Level:* ${before} ➠ ${user.level}\n`.trim(), m)
                         }
                 }
         }
