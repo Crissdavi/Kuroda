@@ -18,7 +18,7 @@ handler.all = async function (m) {
         let discriminator = who.substring(9, 13)
         let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
         let usersLevel = sortedLevel.map(enumGetKey)
-        let { min, xp, max } = xpRange(user.level, global.multiplier)
+        let { min, xp: max - min, max } = xpRange(user.level, global.multiplier)
         let username = conn.getName(who)
         try {
                 pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
