@@ -38,20 +38,36 @@ handler.all = async function (m) {
 }
 export default handler
 
+function assignRole(level) {
+    if (level >= 10) return "Experto";
+    if (level >= 5) return "Avanzado";
+    return "Novato";
+}
+
+// Función para ordenar elementos
 function sort(property, ascending = true) {
-        if (property) return (...args) => args[ascending & 1][property] - args[!ascending & 1][property]
-        else return (...args) => args[ascending & 1] - args[!ascending & 1]
+    if (property) {
+        return (...args) => args[ascending & 1][property] - args[!ascending & 1][property];
+    } else {
+        return (...args) => args[ascending & 1] - args[!ascending & 1];
+    }
 }
 
+// Función para convertir valores a número
 function toNumber(property, _default = 0) {
-        if (property) return (a, i, b) => {
-                return { ...b[i], [property]: a[property] === undefined ? _default : a[property] }
-        }
-        else return a => a === undefined ? _default : a
+    if (property) {
+        return (a, i, b) => ({
+            ...b[i],
+            [property]: a[property] === undefined ? _default : a[property],
+        });
+    } else {
+        return a => (a === undefined ? _default : a);
+    }
 }
 
+// Función para obtener el identificador único de un usuario
 function enumGetKey(a) {
-        return a.jid
+    return a.jid;
 }
 
 
