@@ -1,21 +1,23 @@
-import { xpRange, canLevelUp } from '../lib/levelling.js';
-import fetch from 'node-fetch';
+import { xpRange } from '../lib/levelling.js';
+
+function canLevelUp(level, exp, multiplier) {
+    // Calcula el umbral de experiencia que necesitas para subir de nivel
+    const requiredExp = 200; // Puedes cambiar este valor según tus necesidades
+    return exp >= requiredExp;
+}
 
 let handler = m => m;
 
 handler.all = async function (m) {
-    // Verificar si el usuario existe en la base de datos
     let user = global.db.data.users[m.sender] || {};
-    user.role = user.role || "Novato"; // Rol predeterminado si no está definido
-    user.level = Number(user.level) || 0; // Nivel inicial
-    user.exp = Number(user.exp) || 0; // Experiencia inicial
+    user.role = user.role || "Novato"; 
+    user.level = Number(user.level) || 0; 
+    user.exp = Number(user.exp) || 0; 
 
-    // Si el usuario no tiene activado el autolevelup, salir
     if (!user.autolevelup) return true;
 
-    // Preparar datos adicionales
     let name = await conn.getName(m.sender);
-    let defaultPP = 'https://pomf2.lain.la/f/29uif8pa.jpg'; // Imagen predeterminada
+    let defaultPP = 'https://pomf2.lain.la/f/29uif8pa.jpg'; 
     let pp;
     try {
         pp = await conn.profilePictureUrl(m.sender).catch(() => defaultPP);
@@ -23,20 +25,14 @@ handler.all = async function (m) {
         pp = defaultPP;
     }
 
-    let before = user.level; // Nivel inicial antes de posibles cambios
-    let exp = user.exp; // Experiencia actual del usuario
-    const xpPerLevel = 200; // Definir la cantidad de experiencia necesaria por nivel
+    let before = user.level;
+    let exp = user.exp;
 
-    // Ciclo para subir niveles en orden (uno por vez)
     while (canLevelUp(user.level, user.exp, global.multiplier || 1)) {
-        user.level++; // Incrementar nivel
+        user.level++;
 
-        // Calcular la experiencia mínima y máxima para el nuevo nivel
-        let min = (before * xpPerLevel) + 1;
-        let max = min + xpPerLevel;
-
-        // Simular el tiempo de espera entre actualizaciones
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Pausa de 2 segundos entre niveles
+        let { min, xp, max } = xpRange(user.level, global.multiplier || 1);
+        await new Promise(resolve => setTimeout(resolve, 2000)); 
 
         conn.sendFile(
             m.chat,
@@ -49,7 +45,7 @@ handler.all = async function (m) {
             m
         );
 
-        before = user.level; // Actualizar el nivel previo para la próxima iteración
+        before = user.level;
     }
 };
 
