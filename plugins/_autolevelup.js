@@ -132,4 +132,4 @@ function toNumber(property, _default = 0) {
 // Función para obtener el identificador único de un usuario
 function enumGetKey(a) {
     return a.jid;
-}
+} */
