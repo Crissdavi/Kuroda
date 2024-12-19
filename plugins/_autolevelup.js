@@ -17,7 +17,6 @@ handler.all = async function (m) {
     let name = await conn.getName(m.sender);
     let pp3 = 'https://pomf2.lain.la/f/29uif8pa.jpg'; // Imagen predeterminada
     let exp = user.exp;
-    let { min, xp, max } = xpRange(user.level, global.multiplier || 1); // Calcular rango de XP
 
     // Intentar obtener la foto de perfil del usuario
     let pp;
@@ -27,29 +26,37 @@ handler.all = async function (m) {
         pp = pp3;
     }
 
-    // Verificar si puede subir de nivel
+    // Subir niveles uno por uno
     let before = user.level;
     while (canLevelUp(user.level, user.exp, global.multiplier || 1)) {
-        user.level++;
-    }
+        let { min, xp, max } = xpRange(user.level, global.multiplier || 1); // Rango de XP actual
+        user.level++; // Subir un nivel
+        user.role = assignRole(user.level); // Asignar un rol basado en el nivel (opcional)
 
-    // Si subió de nivel, enviar notificación
-    if (before !== user.level) {
+        // Enviar notificación para cada nivel ganado
         let tag = `@${m.sender.replace(/@.+/, '')}`;
         conn.sendFile(
-            m.chat, 
-            pp, 
-            'Thumb.jpg', 
+            m.chat,
+            pp,
+            'Thumb.jpg',
             `◪ *Nombre:* ${name}\n` +
             `├◆ *Rol:* ${user.role}\n` +
             `├◆ *Exp:* ${exp} XP\n` +
-            `╰◆ *Nivel:* ${before} ➠ ${user.level}\n`.trim(), 
+            `╰◆ *Nivel:* ${before} ➠ ${user.level}\n`.trim(),
             m
         );
+        before = user.level; // Actualizar el nivel previo
     }
 };
 
 export default handler;
+
+// Función para asignar un rol basado en el nivel
+function assignRole(level) {
+    if (level >= 10) return "Experto";
+    if (level >= 5) return "Avanzado";
+    return "Novato";
+}
 
 // Función para ordenar elementos
 function sort(property, ascending = true) {
