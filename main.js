@@ -153,10 +153,15 @@ global.conn = makeWASocket(connectionOptions)
 conn.isInit = false
 
 if (usePairingCode && !conn.authState.creds.registered) {
-		const phoneNumber = await question('Please enter your phone number:\n')
-		const code = await conn.requestPairingCode(phoneNumber)
-		console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
-	}
+  const phoneNumber = await question(chalk.blue(' Ingresa el número de WhatsApp en el cual estará la Bot\n'))
+
+  if (conn.requestPairingCode) {
+    let code = await conn.requestPairingCode(phoneNumber);
+    code = code?.match(/.{1,4}/g)?.join("-") || code;
+    console.log(chalk.magenta(`Su código es:`, code))
+  } else {
+  }
+}
 async function resetLimit() {
   try {
     let list = Object.entries(global.db.data.users);
