@@ -235,7 +235,7 @@ let tags = {
       
 
         let img = 'https://i.ibb.co/z73vR0m/file.jpg'
-    await m.react('🤍')
+    await m.react('🌹')
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, fake)    
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
