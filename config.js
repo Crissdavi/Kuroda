@@ -30,17 +30,17 @@ global.prems = []
 
 global.packname = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
 global.author = 'Haru ✯'
-global.namebot = '𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀'
+global.namebot = '❀ 𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ❀'
 global.wait = '*Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ ฅ^•ﻌ•^ฅ*'
 global.wm = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
-global.stickpack = `𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀`
+global.stickpack = `𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰`
 global.titulowm = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
 global.titulowm2 = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
 global.igfg = 'Haru ✯'
-global.botname = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
+global.botname = '❀ 𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ❀'
 global.dev = ' 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 '
-global.titu = ' 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂'
-global.textbot = '𝐊𝐔𝐑𝐎'
+global.titu = '❀ 𝑵 𝑬 𝒁 𝑼 ❀'
+global.textbot = '𝑵 𝑬 𝒁 𝑼'
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
 global.vs = '2.0.0'
 global.namechannel = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
@@ -67,11 +67,11 @@ global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(fa
 
 global.fakegif2 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { videoMessage: { title: 'GenesisBot-MD', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨🌹', jpegThumbnail: catalogo }}};
 
-global.fakegif3 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message:{ videoMessage: { title: '𝐊𝐔𝐑𝐎𝐃𝐀', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂', jpegThumbnail: catalogo }}};
+global.fakegif3 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message:{ videoMessage: { title: '𝑵 𝑬 𝒁 𝑼', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂', jpegThumbnail: catalogo }}};
 
-global.fakegif4 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { videoMessage: { title: 'GenesisBot-MD', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '⚘𝐒𝐭𝐢𝐜𝐤𝐞𝐫 💥', jpegThumbnail: catalogo }}};
+global.fakegif4 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { videoMessage: { title: '𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '⚘𝐒𝐭𝐢𝐜𝐤𝐞𝐫 💥', jpegThumbnail: catalogo }}};
 
-global.estilox = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: '𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂', orderTitle: 'packname', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
+global.estilox = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: '𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰', orderTitle: 'packname', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
