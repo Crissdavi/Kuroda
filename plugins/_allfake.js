@@ -66,7 +66,7 @@ global.fake = {
     forwardedNewsletterMessageInfo: {
       newsletterJid: "120363220939514640@newsletter",
       serverMessageId: 100,
-      newsletterName: '𝑮𝒆𝒏𝒆𝒔𝒊𝒔-𝑰𝑨 - 𝑪𝒉𝒂𝒏𝒏𝒆𝒍',
+      newsletterName: '𝑵 𝑬 𝒁 𝑼',
     },
     },
   }
@@ -101,12 +101,12 @@ global.fake = {
     forwardedNewsletterMessageInfo: {
       newsletterJid: "120363220939514640@newsletter",
       serverMessageId: 100,
-      newsletterName: '𝑮𝒆𝒏𝒆𝒔𝒊𝒔-𝑰𝑨 - 𝑪𝒉𝒂𝒏𝒏𝒆𝒍',
+      newsletterName: '❀ 𝑵 𝑬 𝒁 𝑼 ❀',
     }, 
       externalAdReply: {
         mediaUrl: grupos,
         mediaType: 'VIDEO',
-        description: '¡Génesis la Mejor! 🤍',
+        description: '❀ 𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ❀',
         title: wm,
         body: 'team starcore',
         thumbnailUrl: icono,
