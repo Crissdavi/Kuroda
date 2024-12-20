@@ -67,7 +67,7 @@ global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(fa
 
 global.fakegif2 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { videoMessage: { title: '❀ 𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ❀', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '𝐁𝐢𝐞𝐧𝐯𝐞𝐧𝐢𝐝𝐨🌹', jpegThumbnail: catalogo }}};
 
-global.fakegif3 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message:{ videoMessage: { title: '𝑵 𝑬 𝒁 𝑼', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂', jpegThumbnail: catalogo }}};
+global.fakegif3 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message:{ videoMessage: { title: '❀ 𝑵 𝑬 𝒁 𝑼  𝑲 𝑰 𝑪 𝑯 𝑰 ❀', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂', jpegThumbnail: catalogo }}};
 
 global.fakegif4 = { key: { participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "5219992095479-1625305606@g.us" } : {}) }, message: { videoMessage: { title: '𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ', h: `Hmm`, seconds: '99999', gifPlayback: true, caption: '⚘𝐒𝐭𝐢𝐜𝐤𝐞𝐫 💥', jpegThumbnail: catalogo }}};
 
