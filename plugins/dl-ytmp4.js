@@ -1,7 +1,3 @@
-/* ytmp4 
-by nov
- type plugins esm
-*/
 import fetch from 'node-fetch';
 let handler = async (m, {
     conn,
