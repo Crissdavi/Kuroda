@@ -66,7 +66,7 @@ global.fake = {
     forwardedNewsletterMessageInfo: {
       newsletterJid: "120363220939514640@newsletter",
       serverMessageId: 100,
-      newsletterName: '𝑵 𝑬 𝒁 𝑼',
+      newsletterName: ''❀ 𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ❀',',
     },
     },
   }
