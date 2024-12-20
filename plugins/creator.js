@@ -1,18 +1,21 @@
 import fetch from 'node-fetch'
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
+m.react('🌹')
+
+let fkontak = { "key": { "participants":"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }
+
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who).catch(_ => global.pic)
 let name = await conn.getName(who)
+let edtr = `@${m.sender.split`@`[0]}`
 
-  const sentMsg = await conn.sendContactArray(m.chat, [
-    [`${nomorown}`, `${await conn.getName(nomorown+'@s.whatsapp.net')}`, `💌 Developer Bot `, `ɴᴏᴛ ғᴀᴍᴏᴜs ᴊᴜsᴛ ᴀʟᴏɴᴇ ʙᴏʏ`, `yanxiao021@gmail.com`, `🇮🇩 Indonesia`, `📍 https://github.com/ImYanXiao`, `👤 ᴏᴡɴᴇʀ ᴇʟᴀɪɴᴀ ʙᴏᴛ`],
-    [`${conn.user.jid.split('@')[0]}`, `${await conn.getName(conn.user.jid)}`, `🎈 ʙᴏᴛ ᴡʜᴀᴛsᴀᴘᴘ`, `📵 ᴅᴏɴᴛ sᴘᴀᴍ/ᴄᴀʟʟ ᴍᴇ 😢`, `ɴᴏᴛʜɪɴɢ`, `🇮🇩 Indonesia`, `📍 https://github.com/ImYanXiao/Elaina-MultiDevice`, `ʜᴀɴʏᴀ ʙᴏᴛ ʙɪᴀsᴀ ʏᴀɴɢ ᴋᴀᴅᴀɴɢ sᴜᴋᴀ ᴇʀᴏʀ ☺`]
-  ], m)
-  await m.reply(`ʜᴇʟʟᴏ @${m.sender.split(`@`)[0]} ᴛʜᴀᴛs ᴍʏ ᴏᴡɴᴇʀ ᴅᴏɴᴛ sᴘᴀᴍ ᴏʀ ʏᴏᴜ ᴡɪʟʟ ʙᴇ ʙʟᴏᴄᴋᴇᴅ`)
-  } 
+let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:WhatsApp;  Haru ✯ 🍃\nNICKNAME: Haru ✯\nORG: Haru ✯🤍\nTITLE:soft\nitem1.TEL;waid=51913776697:+51 913 776 697\nitem1.X-ABLabel:📞 WhatsApp Owasner\nitem2.URL:https://github.com/Crissdavi\nitem2.X-ABLabel:💬 More\nitem3.EMAIL;type=INTERNET: crissdavidgary@gmail.com\nitem3.X-ABLabel:💌 Correo soporte\nitem4.ADR:;;🇵🇪 Perú;;;;\nitem4.X-ABADR:💬 More\nitem4.X-ABLabel: Localización 🫧\nBDAY;value=date:🤍 09-12-2007\nEND:VCARD`
+const tag_own = await conn.sendMessage(m.chat, { contacts: { displayName: packname, contacts: [{ vcard }] }}, { quoted: fkontak })
+let caption = `*👋 Hola ${edtr}, este es el contacto de mi creador 🌹*`
+    await conn.reply(m.chat, caption, tag_own, { mentions: conn.parseMention(caption) })
+
+}
 handler.help = ['owner', 'creator']
-handler.tags = ['info']
-
-handler.command = /^(owner|creator)$/i
+handler.tags = ['main']
+handler.command = /^(owner|creator|creador|dueño)$/i
 
 export default handler
