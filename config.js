@@ -29,17 +29,17 @@ global.prems = []
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
 global.packname = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
-global.author = '@usxr_angelito0'
-global.namebot = 'Genesis Ai'
+global.author = 'Haru ✯'
+global.namebot = '𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀'
 global.wait = '*Aɢᴜᴀʀᴅᴇ ᴜɴ ᴍᴏᴍᴇɴᴛᴏ ฅ^•ﻌ•^ฅ*'
-global.wm = '▸ ⃦Ⴚɛɳєડｪꪳ͢ئ ﾑ፤ ꩍꩍꢀ 𓏲᭔۫֟፝֯᷼๑꙰୭᳟⁣᭄'
-global.stickpack = `©️ ρσωε૨ ɓყ ƭεαɱ รƭα૨૮σ૨ε`
-global.titulowm = '-❀ᩙ̈͟༚̮ ⡞᪲=͟͟͞🄶𝚎᪶۫۫𝚗᪶۫۫𝚎᪶۫۫𝚜᪶۫۫𝚒᪶۫۫𝚜᪶۫ 𝚊᪶۫𝚒᪶۫͜ ≼᳞ׄ ᵎ ˚꙳꤬ꨪ'
-global.titulowm2 = '.‧·ீ੭ ¡ ᗃᮢ፝֟͡Gᴇɴᴇsɪs B۵ᴛ ʟᴀ ᴍᴇᴊ꧔ʀ !˚̩̩̥͙°̩̥༅˚'
-global.igfg = '@usxr_angelito0'
-global.botname = '  ᩠ ꣣ʹ͚〃Ǥ℮ภэડเธ λ𝕚  ·ꗏฺ̇·.•۟'
-global.dev = '_© Reserved | Genesis AI *2024*_\n'
-global.titu = '©️ ρσωε૨ ɓყ ɠαℓαאყ ƭεαɱ'
+global.wm = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
+global.stickpack = `𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀`
+global.titulowm = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
+global.titulowm2 = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
+global.igfg = 'Haru ✯'
+global.botname = '⛀ ⛁  𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 ⛁ ⛀'
+global.dev = ' 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂 '
+global.titu = ' 𝐊𝐔𝐑𝐎𝐃𝐀 𝐎𝐅𝐂'
 global.textbot = 'ɢᴇɴᴇꜱɪꜱʙᴏᴛ x ᴀɴɢᴇʟ-ᴏꜰᴄ 🤍'
 global.listo = '*Aqui tiene ฅ^•ﻌ•^ฅ*'
 global.vs = '2.0.0'
