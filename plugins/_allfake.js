@@ -99,7 +99,7 @@ global.fake = {
     contextInfo: {
             isForwarded: true,
     forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363220939514640@newsletter",
+      newsletterJid: "120363290084838811@newsletter",
       serverMessageId: 100,
       newsletterName: '❀ 𝑵 𝑬 𝒁 𝑼 ❀',
     }, 
