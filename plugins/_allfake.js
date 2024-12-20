@@ -108,7 +108,7 @@ global.fake = {
         mediaType: 'VIDEO',
         description: '❀ 𝑵 𝑬 𝒁 𝑼    𝑲 𝑰 𝑪 𝑯 𝑰 ❀',
         title: wm,
-        body: 'team starcore',
+        body: '𝐓𝐄𝐀𝐌 𝐊𝐔𝐑𝐎𝐃𝐀',
         thumbnailUrl: icono,
         sourceUrl: grupos
       }
