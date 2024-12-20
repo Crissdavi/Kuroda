@@ -4,12 +4,12 @@ import moment from 'moment-timezone'
 
 let handler = m => m
 handler.all = async function (m) {
-let imagenes = ["https://pomf2.lain.la/f/rycjgv2t.jpg",
-"https://pomf2.lain.la/f/vvqlvsjy.jpg",
-"https://pomf2.lain.la/f/w9b070dp.jpg",
-"https://pomf2.lain.la/f/mj970w6x.jpg",
-"https://pomf2.lain.la/f/9laq0peo.jpg",
-"https://pomf2.lain.la/f/mcqdpzko.jpg"]
+let imagenes = ["https://i.ibb.co/6NGFGbN/file.jpg",
+"https://i.ibb.co/0Mf8WMp/file.jpg",
+"https://i.ibb.co/0Mf8WMp/file.jpg",
+"https://i.ibb.co/M7GR5sL/file.jpg",
+"https://i.ibb.co/2ZGBndZ/file.jpg",
+"https://i.ibb.co/rQq1q27/file.jpg"]
 
     let icono = imagenes[Math.floor(Math.random() * imagenes.length)]
     let grupos = [group, group2].getRandom()
