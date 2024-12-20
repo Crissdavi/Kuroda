@@ -1,5 +1,5 @@
 //import { youtubeSearch } from '@bochilteam/scraper';
-import fetch from 'node-fetch';
+/* import fetch from 'node-fetch';
 import { youtubedl } from '../lib/youtube.js'
 
 var handler = async (m, { conn, args, command, text, usedPrefix }) => {
@@ -279,4 +279,4 @@ handler.tags = ['downloader']
 handler.command = ['play', 'ytplay', 'youtubeplay', 'ytlist', 'youtubelist', 'ytl', 'yta', 'ytmp3', 'getaud', 'youtubemp3', 'yts', 'youtubesearch', 'getvid', 'ytmp4', 'youtubemp4','ytv','youtubevideo']
 handler.limit = true // false
 
-export default handler;
+export default handler; */
