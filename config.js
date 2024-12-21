@@ -57,7 +57,7 @@ global.miniurl = fs.readFileSync('./src/miniurl.jpg')
 global.group = 'https://chat.whatsapp.com/DjDzZgrxwNSCiaQmsW6tpD'
 global.group2 = 'https://chat.whatsapp.com/LrO4Xi0labZ9Hu4GNxhtu9'
 global.canal = 'https://whatsapp.com/channel/0029VagzzXs65yD3pXoJSp10'
-global.github = 'https://github.com/Angelito-OFC/Genesis-AI' 
+global.github = 'https://github.com/Crissdavi/Kuroda' 
 global.instagram = 'https://www.instagram.com/ig.de.haru' 
 global.whatsApp = 'https://wa.me/51913776697'
 
