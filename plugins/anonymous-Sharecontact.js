@@ -19,7 +19,7 @@ async function handler(m, { command, conn, text }) {
 
 handler.help = ['sendcontact']
 handler.tags = 'anonymous'
-handler.command = /^(sendcontact)$/i
+handler.command = /^(sendcontact|enviarcontacto|compartircontacto)$/i
 handler.private = true
 
 export default handler
