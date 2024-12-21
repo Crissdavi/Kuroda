@@ -238,12 +238,12 @@ let tags = {
     await m.react('🌹')
     await conn.sendFile(m.chat, img, 'thumbnail.jpg', text.trim(), m, null, fake)    
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.reply(m.chat, 'Lo siento , el menú tiene un error', m)
     throw e
   }
 }
 
-handler.help = ['menu','allmenu', 'help', '?']
+handler.help = ['menu','allmenu', 'help', '?', 'menú']
 handler.tags = ['main']
 handler.command = /^(menu|allmenu|help|\?)$/i
 
