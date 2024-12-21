@@ -139,7 +139,7 @@ participant : '0@s.whatsapp.net'
 },
 message: {
 newsletterAdminInviteMessage: {
-newsletterJid: '120363210705976689@newsletter',
+newsletterJid: '120363290084838811@newsletter',
     newsletterName: '',
     caption: `${wm} | 2022 - 2025`
 }}}
@@ -182,7 +182,7 @@ newsletterJid: '120363210705976689@newsletter',
         global.ftoko = {
             key: {
                 fromMe: false,
-                participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "6282127487538@s.whatsapp.net" } : {})
+                participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "51913776697@s.whatsapp.net" } : {})
             },
             message: {
                 "productMessage": {
@@ -223,7 +223,7 @@ newsletterJid: '120363210705976689@newsletter',
             },
             "message": {
                 "groupInviteMessage": {
-                    "groupJid": "6282127487538-1625305606@g.us",
+                    "groupJid": "51913776697-120363172971331394@g.us",
                     "inviteCode": "null",
                     "groupName": "Kawan WH MODS DEV",
                     "caption": wm,
@@ -236,7 +236,7 @@ newsletterJid: '120363210705976689@newsletter',
             key: {
                 fromMe: false,
                 participant: `0@s.whatsapp.net`, ...(m.chat ?
-                    { remoteJid: "6282127487538-1625305606@g.us" } : {})
+                    { remoteJid: "51913776697-120363172971331394@g.us" } : {})
             },
             message: {
                 "videoMessage": {
