@@ -45,7 +45,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
 handler.help = ['animesearch'];
 handler.tags = ['anime'];
-handler.command = /^(animesearch|wait|whatisthisanime|whatanime|animewhat)$/i;
+handler.command = /^(animesearch|buscaranime)$/i;
 
 handler.limit = 2;
 
