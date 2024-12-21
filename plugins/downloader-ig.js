@@ -1,30 +1,25 @@
-var handler = async (m, { conn, args }) => {
-    const url = args[0];
-    if (!url.startsWith('https://www.instagram.com/')) {
-        return conn.reply(m.chat, 'URL yang diberikan tidak valid.', m);
-    }
+import fetch from 'node-fetch'
 
-    try {
-        const response = await fetch(`https://bioskop-six.vercel.app/igp?u=${encodeURIComponent(url)}`);
-        const result = await response.json();
+let handler = async (m, { conn, usedPrefix, command, args }) => {
+if (!args[0]) return m.reply(`Ingresa un enlace de Instagram`)
 
-        if (response.status === 200) {
-            const mediaUrls = result.image_urls || []; 
+try {
+let api = await fetch(`https://deliriussapi-oficial.vercel.app/download/instagram?url=${args[0]}`)
+let json = await api.json()
+let { data } = json
+let JT = data
+for (let i = 0; i < JT.length; i++) {
+let HFC = JT[i];
+if (HFC.type === "image") {
+await conn.sendMessage(m.chat, { image: { url: HFC.url } }, { quoted: m })
+} else if (HFC.type === "video") {
+await conn.sendMessage(m.chat, { video: { url: HFC.url } }, { quoted: m })
+}}
+} catch (error) {
+console.error(error)
+}}
+handler.tags = ['downloader']
+handler.help = ['ig']
+handler.command = /^(igdl|ig|instagramdl|instagram)$/i
 
-            for (let mediaUrl of mediaUrls) {
-                await conn.sendFile(m.chat, mediaUrl, '', '', m);
-            }
-        } else {
-            throw new Error('Gagal mendapatkan media dari Instagram');
-        }
-    } catch (error) {
-        console.error(error);
-        conn.reply(m.chat, `Error: ${error.message}`, m);
-    }
-}
-
-handler.help = ['instagram'];
-handler.tags = ['downloader'];
-handler.command = /^(ig(dl)?|instagram(dl)?)$/i;
-
-export default handler;
+export default handler
