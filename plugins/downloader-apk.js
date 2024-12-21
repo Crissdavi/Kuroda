@@ -11,8 +11,8 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (data.status) {
       const apkData = data.data;
       const message = `
-*Informasi APK*
-Nama: ${apkData.name}
+*information APK*
+Name: ${apkData.name}
 Last Update: ${apkData.lastup}
 Package: ${apkData.package}
 Size: ${apkData.size}
@@ -21,11 +21,11 @@ Download Link: ${apkData.dllink}
       `;
       await conn.sendFile(m.chat, apkData.dllink, `${apkData.name}.apk`, message, m);
     } else {
-      conn.reply(m.chat, 'Tidak dapat menemukan informasi APK', m);
+      conn.reply(m.chat, 'No se puede encontrar información del APK', m);
     }
   } catch (error) {
     console.error(error);
-    conn.reply(m.chat, 'Terjadi kesalahan saat memproses permintaan', m);
+    conn.reply(m.chat, 'Ocurrio un error al procesar su solicitud ', m);
   }
 };
 
