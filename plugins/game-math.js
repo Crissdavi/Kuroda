@@ -25,7 +25,7 @@ Contoh penggunaan: ${usedPrefix}math medium
 }
 handler.help = ['math <mode>']
 handler.tags = ['game']
-handler.command = /^math/i
+handler.command = ['math', 'mat', 'mates']
 
 
 let modes = {
