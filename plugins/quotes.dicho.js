@@ -3,8 +3,8 @@ var handler = async(m, { conn, text }) => {
 var res = await Quotes()
 return m.reply('*' + res.author + '*' + '\n' + res.quotes)
 }
-handler.help = ['katabijak']
+handler.help = ['dicho']
 handler.tags = ['quotes']
-handler.command = /^(katabijak)$/i
+handler.command = /^(dicho|frase|)$/i
 
 export default handler
