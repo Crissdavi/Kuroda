@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `Gunakan contoh ${usedPrefix}${command} NamaAPK atau id APK\n*${usedPrefix}${command} whatsapp*\n*${usedPrefix}${command} com.whatsapp*\n`;
+  if (!args[0]) throw `Utilice el ejemplo ${usedPrefix}${command} nombre del APK o id APK\n*${usedPrefix}${command} whatsapp*\n*${usedPrefix}${command} com.whatsapp*\n`;
 
   try {
     const apkId = encodeURIComponent(args.join(' '));
