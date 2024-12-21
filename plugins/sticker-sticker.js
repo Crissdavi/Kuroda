@@ -23,7 +23,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 			stiker = await mp4ToWebp(img, { pack: global.packname, author: author })
 		} else if (args[0] && isUrl(args[0])) {
 			stiker = await createSticker(false, args[0], '', author, 20)
-		} else throw `Reply an image/video/sticker with command ${usedPrefix + command}`
+		} else throw `Responde a una imagen/video con ${usedPrefix + command}`
 	} catch (e) {
 		console.log(e)
 		stiker = e
