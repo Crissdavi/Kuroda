@@ -5,7 +5,7 @@ var handler = async (m, { text }) => {
   m.reply('@' + m.sender.split('@')[0] + `is now AFK${text ? ': ' + text : ''}
 `)
 }
-handler.help = ['afk [alasan]']
+handler.help = ['afk [motivo]']
 handler.tags = ['main']
 handler.command = /^afk$/i
 
