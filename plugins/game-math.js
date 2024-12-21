@@ -15,7 +15,7 @@ Ejemplo: ${usedPrefix}math noob
   if (id in conn.math) return conn.reply(m.chat, 'Todavia hay preguntas sin responder ', conn.math[id][0])
   let math = genMath(mode)
   conn.math[id] = [
-    await conn.reply(m.chat, `Cual es el resultado de *${math.str}*?\n\nTimeout: ${(math.time / 1000).toFixed(2)} detik\nBonus por respuesta correcta: ${math.bonus} XP`, m),
+    await conn.reply(m.chat, `Cual es el resultado de *${math.str}*?\n\nTiempo: ${(math.time / 1000).toFixed(2)} detik\nBonus por respuesta correcta: ${math.bonus} XP`, m),
     math, 4,
     setTimeout(() => {
       if (conn.math[id]) conn.reply(m.chat, `El tiempo se ha acabado!\nLa respuesta es ${math.result}`, conn.math[id][0])
