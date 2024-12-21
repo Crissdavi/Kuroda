@@ -9,9 +9,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     try {
         let q = m.quoted ? m.quoted : m;
         let mime = (q.msg || q).mimetype || '';
-        if (!mime) throw `responder a la imagen con ${usedPrefix + command}`;
+        if (!mime) throw `responde a la imagen con ${usedPrefix + command}`;
 
-        m.reply('Tunggu sebentar...');
+        m.reply('Espere un momento por favor ...');
 
         let media = await q.download();
         let url = await uploadToPomf2(media);
@@ -31,14 +31,14 @@ let handler = async (m, { conn, usedPrefix, command }) => {
                 await conn.sendFile(m.chat, videoURL, filename, caption, m);
             }
         } else {
-            m.reply('No result found');
+            m.reply('No hay resultados');
         }
     } catch (error) {
         console.error(error);
-        if (error.includes(`Kirim/Reply Gambar dengan caption ${usedPrefix + command}`)) {
+        if (error.includes(`responde a la imagen con ${usedPrefix + command}`)) {
             m.reply(error);
         } else {
-            m.reply('Internal server error');
+            m.reply('Error interno del servidor');
         }
     }
 };
