@@ -14,7 +14,7 @@ var handler = async (m, { conn, args }) => {
 				conn.sendMessage(m.chat, { sticker: { url: res[i].url }})
 			}
 		}
-	} else throw 'Input Query / Telesticker Url'
+	} else throw 'Consulta de entrada / URL de telesticker'
 }
 handler.help = ['telesticker']
 handler.tags = ['downloader']
