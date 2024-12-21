@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     try {
         let q = m.quoted ? m.quoted : m;
         let mime = (q.msg || q).mimetype || '';
-        if (!mime) throw `Kirim/Reply Gambar dengan caption ${usedPrefix + command}`;
+        if (!mime) throw `responder a la imagen con  ${usedPrefix + command}`;
 
         m.reply('Tunggu sebentar...');
 
