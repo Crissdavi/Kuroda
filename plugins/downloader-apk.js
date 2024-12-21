@@ -31,6 +31,6 @@ Download Link: ${apkData.dllink}
 
 handler.help = ['apkdl']
 handler.tags = ['downloader']
-handler.command = /^(apkdl|downloadapk|apkdownload)$/i
+handler.command = /^(apkdl|downloadapk|apkdownload|apk)$/i
 
 export default handler;
